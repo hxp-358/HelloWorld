@@ -1,0 +1,201 @@
+<html>与</html>之间的文本描述网页
+<body>与</body>之间的文本是可见内容
+<h1>与</h1>之间的文本被显示为标题
+<p>与</p>之间的文本被显示为段落
+Heading 是通过 < h1> - < h6> 等标签进行定义的。
+paragraph 是通过 < p> 标签进行定义的。
+链接 是通过 < a> 标签进行定义的。
+image是通过 < img> 标签进行定义的。
+HTML元素语法特点：
+
+HTML 元素以开始标签起始
+HTML 元素以结束标签终止
+元素的内容是开始标签与结束标签之间的内容
+某些 HTML 元素具有空内容（empty content）
+空元素在开始标签中进行关闭（以开始标签的结束而结束）
+大多数 HTML 元素可拥有属性(下面会讲)
+以后换行请用<br/>
+相同之处是<br>和<p>都是有换行的属性及作用
+区别 <br/>是只需一个单独使用，而<p>和< /p>是一对使用
+<br/>标签是小换行提行（相当于我们平时文本中输入一个回车），
+<p>标签是大换行（分段，相当与两个回车）,各行作用。
+是在 HTML 元素的开始标签中定义。
+总是以名称和值对应的形式出现，比如：name="value"。
+属性值应该始终被包括在引号内。双引号是最常用的，
+不过使用单引号也没有问题。
+href="http://www.shiyanlou.com"，这一部分就叫做< a>标签的属性，
+是对< a>标签的补充说明，既指向的网页
+
+我们再来给网页增添背景颜色，也许你已经猜到，
+这个属性就是属于< body>标签
+颜色名支持aqua, black, blue, fuchsia, gray, green, lime, 
+maroon, navy, olive, purple, red, silver, teal, white, 
+yellow。）
+<body bgcolor="#000000">
+<body bgcolor="rgb(0,0,0)">
+<body bgcolor="black">
+HTML文本格式化
+
+标签	描述
+< b>	（bold）粗体
+< big>	（big）大字体
+< em>	（emphasized）强调字
+< i>	（italic）斜体
+< small>	（small）小字体
+< strong>	(strong)加重语气
+
+我们就来介绍一下预格式文本（
+所谓预格式文本就是指代码叶和网页展示是一样的格式，
+不用额外添加换行符标签就能换行）
+< pre>....< /pre>标签的使用这个标签适用于代码的粘贴
+你想过没有，要是没有这个标签，要想控制网页中显示的代码格式，
+是一件多么难的事。预格式文本（所谓预格式文本就是指代码叶和网页展示是一样的格式，
+不用额外添加换行符标签就能换行）
+HTML样式
+tyle 提供了一种改变所有 HTML 元素的样式的通用方法。
+这里可以将，背景颜色，字体样式，字体尺寸，字体颜色，
+对齐方式一并定义好
+
+<body style="background-color:powderblue">
+<h1 style="text-align:center">show some funtions</h1>
+<p style="text-align:center;font-family:verdana;color:gray">verdana and gree</p>
+<p style="font-size:40px">the size of these words is 40 pixels</p>
+</body>
+HTML链接
+<a>与</a>标签用来添加超链接
+<a href="http://shiyanlou.com" target="_blank"><img src="tubiao.png"></a>
+target标签表示在原窗口打开还是新建窗口打开_blank:表示新建窗口打开，_self:自我覆盖
+超链接实现书签
+
+锚（anchor）是引自于船只上的锚，锚被抛下后，船只就不容易飘走、迷路。实际上锚就是用于在
+单个页面内不同位置的跳转，有的地方叫做书签涉及到的标签当然还是< a>标签,超级链接标签的
+name属性用于定义锚的名称，一个页面可以定义多个锚，通过超级链接的href属性可以根据name
+跳转到对应的锚。
+
+表格（Table），通常表格用來做版面的排版，而表格的用法包含了幾個重要的标签，
+分別是 table、tr 與 td 這幾個重點，組合起來才是個完整的表格，表格由 < table> 标签来定义。
+每个表格均有若干行（由 < tr> 标签定义），每行被分割为若干单元格（由 < td> 标签定义）。
+字母 td 指表格数据（table data），即数据单元格的内容。< th>标签用来定义表头。数据单元格
+可以包含文本、图片、列表、段落、表单、水平线、表格等等
+
+<table align="center" border="1">
+<tr>
+<td>表格内容</td>
+</tr>
+
+<tr>
+<td>表格内容</td>
+</tr>
+</table>
+boder是表格外边框线粗，设置为0，不显示边框
+colspan :控制此单位所占列数
+rowspan：控制此单位所占行数
+<th>表头</th>：设置表头
+<caption>标题</caption>：设置表的标题
+cellpadding=".."设置单元格边距
+bgcolor=".."设置表格背景颜色
+background="..."以某张图片为表格背景
+HTML图像
+在body 属性中加入background属性添加背景图片
+插入一张图片<img>图片介绍</img>
+添加属性调整图片的对其方式
+
+在< img>标签中加入align属性，调整对其。
+
+相对习题的上下可以加的参数有 bottom、
+middle、
+top，默认就是我们刚看见的bottom
+
+相对字体左右可加的参数有right，
+left默认为right
+
+调整插入图片尺寸
+大多数的尺寸都没有那么合适，
+直接插入以后会破换整体页面的效果。所以在插入图片时
+，很有必要控制其尺寸，这是很容易办到的，就还需要在
+< img>标签中加入width height 两个属性
+
+在这之前我们动手试验过将图片作为链接来使用，
+触发链接的方式就是点击图片的任何地方都可以链接到跳转地址
+，有时我们需要实现，点击图片的不同地方跳转到不同的地方。
+意思就是，一张图片我们可以创建带有可供点击区域的图像地图，
+其中每个区域就是一个超链接。涉及到的标签就是< map>标签，
+用来指定图片,< area>用来指定超链接区域
+
+<img src="./julizi.png" usemap="#lizi"/>
+
+    <map name="lizi">
+     <area shape="rect" coords="50,10,100,60" 
+href="img.html" target="_blank"
+    </map>
+shape属性的取值可以是：rect(矩形)、circle(圆形)
+、poly(多边形)和default(整个图像区域)。这里采用的是矩形
+
+coords属性对于矩形而言，coords有4个值，分别用逗号隔开，
+表示矩形区域左上角x坐标、左上角y坐标、右下角x坐标和右
+下角y坐标，这里获取坐标的方式，就用截图工具帮忙就好
+
+HTML列表
+HTML列表标记主要有三种：有序列表、无序列表和定义列表
+有序列表始于 < ol> 标签。每个列表项始于 < li> 标签。
+列表项内部可以使用段落、换行符、图片、链接以及其他列表等等
+<ol>
+    <li>hadoop</li>
+    <li>linux</li>
+    <li>C</li>
+<ol>
+上面是默认的数字排序，下面我们再加上字母排序和罗马数字排序
+
+只需要添加type属性就可以了，"a"表示以小写字母来排序;"A"
+就是使用大写字母来排序;"i"就是以小写罗马数字来排序;"I"
+就是以大写罗马数字来排序。还可以添加start属性，决定起始地
+
+无序列表始于 < ul> 标签。每个列表项始于 < li>
+（有序无序是一样的）
+无需列表排序的时候就是给每个列表项加各种小符号其中分为Disc
+（默认）实心黑点;Circle小圈;square方点，与有序列表的属性
+都是用的一样的
+
+定义列表通常用于术语的定义和解释
+定义列表由< dl>开始，术语由< dt>开始，解释说明有< dd>开始，
+< dd>....< /dd>里的文字缩进显示。
+
+
+HTML元素被定义为块级元素或内联元素
+块级元素(block)特性：总是独占一行，表现为另起一行开始，
+而且其后的元素也必须另起一行显示;宽度(width)、高度(height)
+、内边距(padding)和外边距(margin)都可控制;就像以前用到的 
+< h1>, < p>, < ul>, < table>标签
+
+内联元素(inline)特性：
+和相邻的内联元素在同一行;宽度(width)、高度(height)
+、内边距的top/bottom(padding-top/padding-bottom)
+和外边距的top/bottom(margin-top/margin-bottom)
+都不可改变，就是里面文字或图片的大小;以前用到的< b>, 
+< td>, < a>, < img>标签
+
+先介绍两个标签< div>标签和< span>标签
+< div>用来定义文档中的分区或节（division/section）
+，没有特定的含义。它是可用于组合其他 HTML 元素的容器
+
+< span>用来组合文档中的行内元素，也没有特定的含义
+
+css用于对元素进行定位或者为页面创建背景以及色彩丰富的外观
+HTML布局
+网页布局可以通过< table>元素，或者< div>元素实现
+
+表单
+表单标签是什么，表单标签就是用于网页中的数据提交，
+比如我们注册网页，在留言板中留言、评论等可以填写数据，
+提交处理地方都需要表单标签，form表单标签内有输入框input、
+单选、多选、select下拉列表菜单与跳转菜单、
+提交按钮等标签内容
+只需要涉及到一个input type标签就能完成
+<form>
+user：
+<input type="text" name="user">
+<br />
+password：
+<input type="password" name="password">
+</form>
+

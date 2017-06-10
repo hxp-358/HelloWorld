@@ -1,0 +1,198 @@
+CSS 的基础语法
+CSS 规则由两个主要的部分构成：选择器，以及一条或多条声明
+selector {
+    declaration1; 
+    declaration2;
+    ... 
+    declarationN;
+}
+选择器通常是您需要改变样式的 HTML 元素
+selector {property: value}
+h1{
+   color:red;
+   font-size:14px;
+}
+属性大于 1 个之后，属性之间用分号隔开。这行代码的作用是将 h1 元素内的文字颜色定义为红色，同时将字体大小设置为 14 像素。
+注意：如果值大于 1 个单词，则需要加引号,如下：p{font-family:"sans serif"}
+这样被分组的选择器就可以分享相同的声明。用逗号将需要分组的选择器分开。
+h1，h2，h3，h4，h5，h6{
+      color：red;
+   }
+根据 CSS，子元素从父元素继承属性。
+body{
+     color：green;
+}通过 CSS 继承，子元素将继承最高级元素（在本例中是 body）所拥有的属性（这些子元素诸如 p, td, ul, ol, ul, li, dl, dt,和 dd）
+
+派生选择器
+通过依据元素在其位置的上下文关系来定义样式，可以使标记更加简洁。
+派生选择器允许你根据文档的上下文关系来确定某个标签的样式。通过合理地使用派生选择器
+比方说，你希望列表中的 strong 元素变为红色，而不是通常的黑色，可以这样定义一个派生选择器
+li strong{
+    color: red;
+}
+ id 选择器
+d 选择器可以为标有 id 的 HTML 元素指定特定的样式
+id 选择器以“#”来定义
+id 选择器和派生选择器：目前比较常用的方式是 id 选择器常常用于建立派生选择器
+#pid a{
+    color:#00755f;
+}
+#divid {
+    color: red;
+
+在 CSS 中，类选择器以一个点号显示：
+.divclass {
+    color: red;
+}
+在下面的 html 代码中，div 元素含有 divclass 类，意味着它要遵守.divclass的规则
+<div class="divclass">
+hello div
+</div>注意：类名的第一个字符不能使用数字！它无法在 Mozilla 或 Firefox 中起作用。
+和 id 一样，class 也可被用作派生选择器：
+.pclass a{
+    color: green;
+
+对带有指定属性的 HTML 元素设置样式。
+<style>
+[title] {color:red;}
+</style>
+属性和值选择器
+<style>
+[title=te]{
+                color: red;
+            }
+</style>
+
+CSS 背景：css 允许应用纯色作为背景，也允许使用背景图像创建相当复杂的效果
+属性	描述
+background-attachment	背景图像是否固定或者随着页面的其余部分滚动
+background-color	设置元素的背景颜色
+background-image	把图片设置为背景
+background-position	设置背景图片的起始位置
+background-repeat	设置背景图片是否及如何重复
+no-repeat 表示不能重复，repeat 可重复，repeat-x 表示 x 轴重复，repeat-y 表示 y 轴重复
+为 background-position 属性提供值有很多方法。首先，可以使用一些关键字：top、bottom、left、right 和 center。通常，这些关键字会成对出现，不过也不总是这样。还可以使用长度值，如 100px 或 5cm，最后也可以使用百分数值。不同类型的值对于背景图像的放置稍有差异。
+背景关联
+如果网页比较长，那么当网页向下滚动时，背景图像也会随之滚动。当网页滚动到超过图像的位置时，图像就会消失我们可以通过background-attachment属性防止这种滚动可以声明图像相对于可视区是固定的（fixed）
+css3 背景
+属性	描述
+background-size	规定背景图片的尺寸
+background-origin	规定背景图片的定位区域
+background-clip	规定背景的绘制区域
+css 样式-文本
+通过文本属性，您可以改变文本的颜色、字符间距，对齐文本，装饰文本，对文本进行缩进，等等。
+属性	描述
+color	文本颜色
+direction	文本方向
+line-height	行高
+letter-spacing	字符间距
+text-align	对齐元素中的文本
+text-decoration	向文本添加修饰
+text-indent	缩进元素中文本的首行
+text-transform	元素中的字母
+unicode-bidi	设置文本方向
+white-space	元素中空白的处理方式
+word-spacing	字间距
+
+text-align是一个基本的属性，它会影响一个元素中的文本行互相之间的对齐方式。
+它的前 3 个值相当直接，不过第 4 个和第 5 个则略有些复杂。
+值 left、right 和 center 会导致元素中的文本分别左对齐、右对齐和居中。
+西方语言都是从左向右读，所有text-align的默认值是 left。
+文本在左边界对齐，右边界呈锯齿状（称为“从左到右”文本）。
+ text-indent 缩进文本
+SS 提供了text-indent属性，该属性可以方便地实现文本缩进。
+通过使用text-indent属性，所有元素的第一行都可以缩进一个给定的长度，甚至该长度可以是负值。
+这个属性最常见的用途是将段落的首行缩进，下面的规则会使所有段落的首行缩进 5 em：
+
+在 CSS 的链接属性设置中，我们能设置 color, font-family, background 等等，不同的状态我们可以设置对应的样式。
+CSS 链接的四种状态：
+a:link --普通的、未被访问的链接
+a:visited --用户已访问的链接
+a:hover --鼠标指针位于链接的上方
+a:active --链接被点击的时刻
+a:link {color:#FF0000;}    /* 未被访问的链接 */
+a:visited {color:#00FF00;} /* 已被访问的链接 */
+a:hover {color:#FF00FF;}   /* 鼠标指针移动到链接上 */
+a:active {color:#0000FF;}  /* 正在被点击的链接 */
+CSS 设置链接背景颜色
+修改对应的属性 background-color 就好
+a:link {background-color:#B2FF99;}
+a:visited {background-color:#FFFF85;}
+a:hover {background-color:#FF704D;}
+a:active {background-color:#FF704D;}
+ 修改链接下划线
+ 不是所有的时候我们都需要链接下面的下划线，有时很影响美观link 属性中加入 text-decoration 属性，将传值改为空就行
+CSS 列表
+CSS 列表允许防止、改变列表标志，或者将图片作为列表项标志
+三个属性，列表类型、列表项图像和简写列表属性
+列表类型：列表有无序，有序之分，无序列表又可以用不同的标记来区分。而 list-style-type 这个属性我们就可以用来控制标记类型。
+列表项图片
+无序列的标记有时看上去确实有些寒酸，就几个小点变变样子，下面我们就试着用 list-style-image 属性让标记变得高大上
+ul.img1{list-style-image:url("4.ico")}
+ul.img2{list-style-image: url("11.ico")}
+简写列表样式
+简写列表样式就是说，把所有用于列表的属性设置于一个声明中
+li {list-style : url(example.gif) square}
+list-style 的值可以按任何顺序列出，而且这些值都可以忽略。只要提供了一个值，其它的就会填入其默认值。
+CSS 表格
+border-collapse ---设置是否把表格边框合并为单一的边框。
+
+border-spacing ---设置分隔单元格边框的距离。
+
+caption-side --- 设置表格标题的位置。
+
+empty-cells ---设置是否显示表格中的空单元格。
+
+table-layout ---设置显示单元、行和列的算法。
+我们先使用 border—collapse 让整个列表边框合并为单线，再使用 width，height 来定制表格大小，之后用 background-color 加上背景颜色，text-align 设置字符对其方式，padding 设置内边据：
+CSS 轮廓
+轮廓（outline）是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用。
+CSS outline 属性规定元素轮廓的样式、颜色和宽度
+outline 在一个声明中设置所有的轮廓属性。    
+outline-color   设置轮廓的颜色。    
+outline-style   设置轮廓的样式。    
+outline-width   设置轮廓的宽度。
+
+CSS 盒子模型概述
+margin(外边距);border(边框);padding(内边距);content(内容)
+正文框的最内部分是实际的内容，直接包围内容的是内边距。内边距呈现了元素的背景。内边距的边缘是边框。边框以外是外边距，外边距默认是透明的，因此不会遮挡其后的任何元素。
+内边距、边框和外边距都是可选的，默认值是零。但是，许多元素将由用户单独设置也可以使用通用选择器对所有元素进行设置，就相当与是一个初始化：
+* {
+  margin: 0;
+  padding: 0;
+}
+CSS 盒子模型内边距
+内边据在正文（content）外，边框（border）内。控制该区域最简单的属性是 padding 属性。padding 属性定义元素边框与元素内容之间的空白区域。
+
+CSS padding 属性定义元素的内边距。padding 属性接受长度值或百分比值，但不允许使用负值。
+h1 {padding: 10px;}
+按照上、右、下、左的顺序分别设置各边的内边距，各边均可以使用不同的单位或百分比值：
+h1 {padding: 10px 0.25em 2ex 20%;}
+只想设置某一边的那边据，我们也只可以办到的,只需通过以下四个属性：
+padding-top
+padding-right
+padding-bottom
+padding-left
+#tb td,th{
+    border: 1px solid green;
+    padding: 5px;
+}
+#tb{
+    border-collapse: collapse;
+    width: 500px;
+    text-align: center;
+}
+
+#tb th{
+    text-align: center;
+    color: black;
+    background-color: lightseagreen;
+
+}
+#tb tr.tr2 td{
+    color: black;
+    background-color: #B2FF99;
+
+}
+
+
